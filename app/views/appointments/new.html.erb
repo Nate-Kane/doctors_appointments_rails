@@ -1,0 +1,14 @@
+<%= form_with( model: [@doctor, @appointment], local:true) do |f| %>
+  <%= f.label :patient %>
+  <%= f.select :patient_id, @patients.collect{ |p| [p.full_name, p.id]} %>
+  <%= f.label :role %>
+  <%= f.select :role, ['xrays','colds','disease'] %>
+  <br />
+  <%= f.submit %>
+<% end %>
+
+<!-- 
+    <% def list_patients %>
+      <% @patients.collect{ |p| [p.full_name, p.id]} %>
+    <% end %>
+  -->

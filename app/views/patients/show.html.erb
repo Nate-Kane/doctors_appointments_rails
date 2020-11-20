@@ -1,0 +1,17 @@
+<h1><%= @patient.full_name %></h1> <!-- again, I defined this full_name in class Patient < ApplicationRecord so I can call it here -->
+      <hr />
+      <h2>Doctors</h2>
+      <h4>--click on your doctor to see your appointments, or go make an appointment if you don't have one yet--</h4>
+      <ul>
+        <% @patient.doctors.each do |doctor| %>
+          <li>
+            <%= link_to doctor.name, doctor %>
+          </li>
+        <% end %>
+      </ul>
+      <br />
+      <br />
+      <br />
+      <%= link_to 'Delete Patient', @patient, method: :delete %>
+
+      <!-- make a way to list each appointment for the patient along with the doctor that it's with -->

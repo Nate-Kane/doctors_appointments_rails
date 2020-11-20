@@ -1,0 +1,14 @@
+<h1>Add a Patient</h1>
+     <%= form_with(model: @patient, local: true) do |f| %>  <!-- Honestly i don't understand why this form is the way it is, but I know this is
+                                                              the correct way of doing it and that I'll understand it better with more time and experience -->
+
+        <%= f.label :first_name %>
+        <%= f.text_field :first_name, required: true, autofocus: true, placeholder: "First Name" %> <!-- note to myself to remember the placeholder thing that
+                                                                                                      James reminded me of today. will be useful in future  -->
+
+        <%= f.label :last_name %>
+        <%= f.text_field :last_name, required: true, placeholder: "Last Name" %>
+
+        <%= f.submit %>  
+    <% end %>  <!-- Simon helped me catch this mistake - I had done an echo tag <%= (with equals) instead of the normal tag on 'end' and it was throwing and error
+                    so remember to watch for things like this. Simon if you read this, thanks :D haha  -->

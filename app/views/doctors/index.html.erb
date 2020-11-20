@@ -1,0 +1,12 @@
+<h1>Doctors</h1>
+        <%= link_to 'Add Doctor', new_doctor_path %>
+        <hr />
+        <h2><%= @doctors.length <= 0 ? "No Doctors!" : "" %></h2>  <!-- I thought it was cool when James did it. Don't think I'll ever not have doctors 
+                                                                      in my list lol but nice to remember, and to practice using a ternary, so I'll use it here. -->
+        <ul>
+          <% @doctors.each do |doctor| %>
+            <li>
+              <%= link_to doctor.name, doctor %>
+            </li>
+          <% end %>
+        </ul>

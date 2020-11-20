@@ -1,0 +1,40 @@
+
+        <h1><%= @doctor.name %>: Appointments</h1>
+      <%= link_to 'Make an appointment', new_doctor_appointment_path(@doctor) %>
+      <hr />
+
+
+                                <!-- instead of doing xray/cold/disease.patient.full_name, I think I need to do role.doctor.name -->
+      <h2>Xrays</h2>
+      <ul>
+        <% @xrays.each do |xray| %>
+          <li>
+            <%= xray.patient.full_name %>
+            <br />
+            <%= link_to 'Cancel', doctor_appointment_path(@doctor, xray), method: :delete %>
+            <br/>
+          </li>
+        <% end %>
+      </ul>
+      <h2>Colds</h2>
+      <ul>
+        <% @colds.each do |cold| %>
+          <li>
+            <%= cold.patient.full_name %>
+            <br />
+            <%= link_to 'Cancel', doctor_appointment_path(@doctor, cold), method: :delete %>
+            <br/>
+          </li>
+      <% end %>
+      </ul>
+      <h2>Diseases</h2>
+      <ul>
+        <% @diseases.each do |disease| %>
+          <li>
+            <%= disease.patient.full_name %>
+            <br />
+            <%= link_to 'Cancel', doctor_appointment_path(@doctor, disease), method: :delete %>
+            <br/>
+        </li>
+      <% end %>
+      </ul>

@@ -10,6 +10,9 @@
   </head>
 
   <body>
+    <%= render 'layouts/navbar' %>  <!-- if I don't put _navbar.html.erb, how does it know what I'm talking about? -->
     <%= yield %>
+          <!-- I believe that any text or links I put UNDER 'yield' will ONLY show up on the root page. I could be wrong though. 
+                Food for thought - what could that be useful for? -->
   </body>
 </html>

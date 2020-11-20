@@ -1,0 +1,12 @@
+<h1><%= @doctor.name %></h1>
+      <hr />
+      <br />
+      <%= link_to 'Appointments', doctor_appointments_path(@doctor) %>
+      <br />
+      <br />
+      <br />
+      <%= link_to "Delete Doctor", @doctor, method: :delete %> <!-- reminder to self that if I don't add this method: :delete, then it'll run as the show method. -->
+
+      <!-- ------------------------------------------------------------------------------------------------------------------------ -->
+      <!-- QUESTION for later. Why can I simply put @doctor, instead of like doctors_path? How does this work and why is it used??? -->
+      <!-- ------------------------------------------------------------------------------------------------------------------------ -->

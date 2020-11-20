@@ -1,0 +1,7 @@
+<h1>Add a Doctor</h1>
+  <%= form_with(model: @doctor, local: true) do |f|  %>
+    <%= f.label :name %>
+    <%= f.text_field :name, required: true, placeholder: "Name" %>
+    <%= f.submit %>
+  <% end %>
+  <!-- standard form. :D remember that error I had before though!!! Don't use an echo tag for 'end'. -->
